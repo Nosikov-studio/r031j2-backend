@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
 
      const token =jwt.sign(user, privateKey, {expiresIn: "15m"});
 
-        res.cookie("stoken", token, {
+        res.cookie("token", token, {
         httpOnly: true,
         secure: true,        // требует HTTPS
         sameSite: 'none',
