@@ -1,5 +1,5 @@
 const express = require("express");
-const cookieParser =require("cookie-parser");
+const cookieParser = require("cookie-parser");
 
 const {jwtMiddleware} = require('./jwtMiddleware');
 const login = require('./routes/login');
