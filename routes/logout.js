@@ -1,8 +1,7 @@
-//const sessions = require('../sessions');
+
 module.exports = async (req, res) => {
     try {
-        // const sessionId = req.headers.cookie?.split('=')[1];
-        // delete sessions[sessionId];
+        // просто удаляем куку
         res.clearCookie("token", {
             path: "/",
             httpOnly: true,
