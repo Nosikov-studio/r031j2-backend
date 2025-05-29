@@ -22,8 +22,8 @@ app.use(express.json());
 
 app.get('/', (req, res) => {res.send("hello from backend")});
 app.post('/login', login);
-app.post('/test', test);
-app.post('/logout', logout);
+app.post('/test', jwtMiddleware, test);
+app.post('/logout', jwtMiddleware, logout);
 
 app.listen(40444, () => {
         console.log('Сервер запущен на порту 40444')});
