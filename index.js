@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser =require("cookie-parser");
 
-const {jwtMiddlewere} = require('./jwtMiddleware');
+const {jwtMiddleware} = require('./jwtMiddleware');
 const login = require('./routes/login');
 const test = require('./routes/test');
 const logout = require('./routes/logout');
