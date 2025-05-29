@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const {privateKey} = require('./secret.js');
 
 exports.jwtMiddleware = (req, res, next) => {
-    const token =req.cookie.token;
+    const token =req.cookies.token;
     try {
         req.user = jwt.verify(token, privateKey);
         next();
