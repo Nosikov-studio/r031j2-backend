@@ -5,7 +5,7 @@ const {privateKey} = require('./secret.js');
 exports.jwtMiddleware = (req, res, next) => {
     const token =req.cookies.token;
     try {
-        // простейшая логика верификации токена с помощью privateKey
+        // простейшая логика верификации (проверки) токена с помощью privateKey
         req.user = jwt.verify(token, privateKey);
         next();
     } catch (err) {
