@@ -1,4 +1,7 @@
 const express = require("express");
+const cookieParser =require("cookie-parser");
+
+const {jwtMiddlewere} = require('./jwtMiddleware');
 const login = require('./routes/login');
 const test = require('./routes/test');
 const logout = require('./routes/logout');
@@ -12,9 +15,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-// app.use(cors());
-
+app.use(cookieParser());
 app.use(express.json());
+
 app.get('/', (req, res) => {res.send("hello from backend")});
 app.post('/login', login);
 app.post('/test', test);
